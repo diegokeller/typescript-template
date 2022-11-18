@@ -20,7 +20,7 @@
         "css": "node sass.js",
         "svg": "svgo -f src/svg dist/svg -r --disable=removeViewBox,removeTitle",
         "img": "imagemin src/img/* --out-dir=dist/img --plugin=pngquant --plugin=mozjpeg --plugin=pngcrush --plugin=zopfli",
-        "copy": "recursive-copy 'src/copy' 'dist'",
+        "copy": "recursive-copy 'src/html' 'dist'",
         "build-dirty": "npm run ts && npm-run-all -p js css svg img copy",
         "build": "npm-run-all -s clean build-dirty",
         "watch-ts": "chokidar './src/**/*.ts' -c 'npm run ts'",
@@ -28,7 +28,7 @@
         "watch-js": "chokidar './compiledjs/**/*.js' -c 'npm run js'",
         "watch-svg": "chokidar './src/**/*.svg' -c 'npm run svg'",
         "watch-img": "chokidar './src/img/**/*.*' -c 'npm run img'",
-        "watch-copy": "chokidar './src/copy/**/*.*' -c 'npm run copy'",
+        "watch-copy": "chokidar './src/html/**/*.*' -c 'npm run copy'",
         "watch": "npm-run-all -p build watch-ts watch-css watch-js watch-svg watch-img watch-copy",
         "server-start": "browser-sync start --files 'dist' --server 'dist'"
     },

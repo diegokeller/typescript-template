@@ -1,6 +1,11 @@
-import addClick from './components/some-code';
+import { CalculadoraController } from './controllers/calculadora.controller';
 
 (function () {
-	console.log('main.ts loaded');
-	addClick();
+	var calculadora = new CalculadoraController();
+
+	document.getElementById('botaoResultado')?.addEventListener('click', (event) => {
+		calculadora.somar();
+	});
+	
+
 }())
